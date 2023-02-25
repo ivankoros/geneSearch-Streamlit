@@ -4,16 +4,13 @@ import pandas as pd
 import re
 from st_keyup import st_keyup
 import random
+import config
 
 pd.set_option('display.max_colwidth', None)
 
 st.title("Gene Search 🧬")
 
-datasets = [
-    "CD IR vs CD Sham Filtered.xlsx",
-    "DP IR vs DP Sham Filtered.xlsx",
-    "DP Sham vs CD Sham Filtered.xlsx",
-]
+datasets = config.datasets
 
 data_list = [pd.read_excel(file) for file in datasets]
 
@@ -27,7 +24,6 @@ st.sidebar.markdown('''
 ### Tips:
 * Start entering some characters to look for a gene (Rag, tnf, Itga11...)
 * Switch between gene name (**chemokine (C-C motif) receptor 6**) and symbol (**Ccr6**) with buttons
-* Click on the column headers to sort the results
 * All filtered datasets (*filtered 11/17/2021*) are searched as you type
 * Your search isn't case sensitive and is found everywhere (**paR** turns up **Sparcl1**)
 * Friendly animals will guide you 🐄
@@ -58,7 +54,8 @@ if not gene:
 if gene:
     results = findthing(gene)
     if results is not None:
-        st.dataframe(results, use_container_width=True)
+        st.table(results)
     else:
-        animal = random.choice(cowsay.char_names)
+        #animal = random.choice(cowsay.char_names)
+        animal = "stegosaurus"
         st.text(cowsay.get_output_string(animal, f"No results for {gene}"))
