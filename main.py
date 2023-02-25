@@ -5,14 +5,59 @@ import re
 from st_keyup import st_keyup
 import random
 import config
+from deta import Deta
 
 pd.set_option('display.max_colwidth', None)
 
+# importing datasets
+deta = Deta(config.API_KEY)
+drive = deta.Drive("1")
+
+
+@st.cache_resource
+def get_file_names(_drive):
+    result = _drive.list()
+    all_files = result.get("names")
+    paging = result.get("paging")
+    last = paging.get("last") if paging else None
+
+    while (last):
+        result = _drive.list(last=last)
+        all_files += result.get("names")
+        paging = result.get("paging")
+        last = paging.get("last") if paging else None
+
+    return all_files
+
+
+@st.cache_data
+def get_dataframes(_drive, xl_names):
+    dfs = []
+    for xl_name in xl_names:
+        large_file = _drive.get(xl_name)
+        with open(xl_name, "wb+") as f:
+            for chunk in large_file.iter_chunks(4096):
+                f.write(chunk)
+
+        df = pd.read_excel(xl_name, engine="openpyxl")
+        dfs.append(df)
+
+    return dfs
+
+
+@st.cache_data
+def load_data():
+    file_names = get_file_names(drive)
+    data_list = get_dataframes(drive, file_names)
+    return file_names, data_list
+
+
+file_names, data_list = load_data()
+
+# Streamlit App
 st.title("Gene Search 🧬")
 
-datasets = config.datasets
-
-data_list = [pd.read_excel(file) for file in datasets]
+# data_list = [pd.read_excel(file) for file in datasets]
 
 st.sidebar.markdown('''
 # Options and info
@@ -40,7 +85,7 @@ def findthing(name):
             [search_term, "SaR", "Log2f"]
         ]
         if not set.empty:
-            set["Dataset"] = datasets[i].replace(" Filtered.xlsx", "")
+            set["Dataset"] = file_names[i].replace(" Filtered.xlsx", "")
             set.columns = ["Gene", "Regulation", "Log2f", "Dataset"]
             results.append(set)
     return pd.concat(results, ignore_index=True, sort=False) if results else None
