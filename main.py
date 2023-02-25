@@ -5,9 +5,8 @@ import re
 from st_keyup import st_keyup
 import random
 from deta import Deta
-import os
 
-API_KEY = str(os.getenv("DE_API_KEY"))
+API_KEY = st.secrets["API_KEY"]
 
 # importing datasets
 deta = Deta(API_KEY)

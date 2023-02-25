@@ -176,3 +176,5 @@ poetry.toml
 config.py
 /testing.py.ipynb
 /testing.py
+/secrets.toml
+/.streamlit/secrets.toml
