@@ -4,13 +4,13 @@ import pandas as pd
 import re
 from st_keyup import st_keyup
 import random
-import config
 from deta import Deta
+import os
 
-pd.set_option('display.max_colwidth', None)
+API_KEY = str(os.getenv("DE_API_KEY"))
 
 # importing datasets
-deta = Deta(config.API_KEY)
+deta = Deta(API_KEY)
 drive = deta.Drive("1")
 
 
@@ -91,7 +91,7 @@ def findthing(name):
     return pd.concat(results, ignore_index=True, sort=False) if results else None
 
 
-gene = st_keyup("")
+gene = st_keyup("", debounce=0.1)
 
 if not gene:
     st.text(cowsay.get_output_string("cow", "Enter a gene name or symbol to search :)"))
