@@ -5,7 +5,6 @@ import re
 from st_keyup import st_keyup
 import random
 from deta import Deta
-from st_aggrid import AgGrid, GridOptionsBuilder
 
 API_KEY = st.secrets["API_KEY"]
 
