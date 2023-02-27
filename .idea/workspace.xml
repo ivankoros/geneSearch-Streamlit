@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="351e9943-c269-44f3-b34c-57a01eb726ec" name="Changes" comment="updated environmental variables and added 0.1s delay on reactive search to fix error">
-      <change afterPath="$PROJECT_DIR$/.streamlit/secrets.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="351e9943-c269-44f3-b34c-57a01eb726ec" name="Changes" comment="updated varaibles to reference stereamlit secrets .toml file instead of using environmental variable for platform publishing">
+      <change beforePath="$PROJECT_DIR$/.idea/geneSearch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/geneSearch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -40,7 +40,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ivan Korostenskij/Desktop/Python/geneSearch&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ivan Korostenskij/Desktop/Python/qPCR_auto&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -64,6 +64,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -87,6 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677273303519</updated>
       <workItem from="1677299581308" duration="125000" />
+      <workItem from="1677375290058" duration="143000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1677286036769</created>
@@ -165,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677310429136</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="updated varaibles to reference stereamlit secrets .toml file instead of using environmental variable for platform publishing">
+      <created>1677347423850</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677347423850</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +212,8 @@
     <MESSAGE value="added caching and moved required data to deta, so it would be called with an API from private directory" />
     <MESSAGE value="updated workspace.xml" />
     <MESSAGE value="updated environmental variables and added 0.1s delay on reactive search to fix error" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated environmental variables and added 0.1s delay on reactive search to fix error" />
+    <MESSAGE value="updated varaibles to reference stereamlit secrets .toml file instead of using environmental variable for platform publishing" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated varaibles to reference stereamlit secrets .toml file instead of using environmental variable for platform publishing" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

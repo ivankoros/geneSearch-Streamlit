@@ -5,6 +5,7 @@ import re
 from st_keyup import st_keyup
 import random
 from deta import Deta
+from st_aggrid import AgGrid, GridOptionsBuilder
 
 API_KEY = st.secrets["API_KEY"]
 
@@ -54,7 +55,7 @@ def load_data():
 file_names, data_list = load_data()
 
 # Streamlit App
-st.title("Gene Search 🧬")
+st.title(":white[Gene Search] 🧬")
 
 # data_list = [pd.read_excel(file) for file in datasets]
 
@@ -90,7 +91,7 @@ def findthing(name):
     return pd.concat(results, ignore_index=True, sort=False) if results else None
 
 
-gene = st_keyup("", debounce=0.1)
+gene = st_keyup("", debounce=10)
 
 if not gene:
     st.text(cowsay.get_output_string("cow", "Enter a gene name or symbol to search :)"))

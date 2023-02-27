@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/geneSearch.iml" filepath="$PROJECT_DIR$/.idea/geneSearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../qPCR_auto/.idea/qPCR_auto.iml" filepath="$PROJECT_DIR$/../qPCR_auto/.idea/qPCR_auto.iml" />
     </modules>
   </component>
 </project>
