@@ -11,7 +11,7 @@ Optimized for quick access to past and lab-specific published data, geneSearch-S
 * **Case-insensitive & substring search**: Find matches effortlessly, regardless of capitalization or substring location, e.g., "**rAg**" matches "13-3**RAG**fn2"
 * **User-friendly guidance**: Cowsay ASCII art provides helpful hints and feedback on missing search results
 
-![animation](genesearch-streamlit-animation.gif)
+![newanimation](genesearch-streamlit-animation.gif)
 
 ## Tech Stack
 
