@@ -1,21 +1,21 @@
 # [geneSearch-Streamlit](https://ivankoros-genesearch-streamlit-main-3pmql0.streamlit.app/)
 
-### A streamlit web app to access and browse genome expression past, lab-specific published data to enable mechanistic insights.
-* Pandas and NumPy-wrangled data is piped through a customized, efficiently-cached Streamlit web app to allow for lightning-fast search of both gene symbols and names 
+### A high-performance Streamlit web app for exploring genome expression data with ease
 
-## Functionality
-* No submission button - searches come up dynamically (0.05s delay) as you type
-* Select radio buttons to search by gene symbol "Rag1" or name "Recombination activating 1"
-* Capitalization & string location is ignored for simple, partial searches - "**rAg**" could turn up "13-3**RAG**fn2" 
-* Cowsay ASCII inform where/what to type and on missing search results
+Optimized for quick access to past and lab-specific published data, geneSearch-Streamlit enables users to unlock valuable mechanistic insights within seconds.
 
-## Tools used
-* Created fully in Streamlit, hosted with Streamlit
-* Data and process querying with Streamlit
-* Pandas for preprocessing and table/dataframe visualization
-* Integrated Markdown
+## Features
 
+* **Real-time search**: With a 50ms delay, search results update dynamically as you type - no need for a submission button
+* **Flexible query options**: Choose between gene symbols (e.g., "Rag1") or names (e.g., "Recombination activating 1") using radio buttons
+* **Case-insensitive & substring search**: Find matches effortlessly, regardless of capitalization or substring location, e.g., "**rAg**" matches "13-3**RAG**fn2"
+* **User-friendly guidance**: Cowsay ASCII art provides helpful hints and feedback on missing search results
 
-![image](https://user-images.githubusercontent.com/61260021/223280646-a8e70d87-1e9c-48f2-adc3-b6b544ad2d85.png)
+![animation](genesearch-streamlit-animation.gif)
 
-![image](https://user-images.githubusercontent.com/61260021/224887802-957949d3-e80f-4942-b37b-6c434b6c1bc4.png)
+## Tech Stack
+
+* **Streamlit**: Built and hosted entirely with Streamlit
+* **Pandas**: Leveraged for data preprocessing and table/dataframe visualization
+* **NumPy**: Utilized for efficient data wrangling
+* **Markdown**: Integrated for seamless content formatting
